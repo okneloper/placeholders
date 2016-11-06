@@ -6,7 +6,7 @@ use Traversable;
 
 class PlaceholderCollection implements \Countable, \ArrayAccess, \IteratorAggregate
 {
-    protected $collection;
+    protected $collection = [];
 
     public function add(Placeholder $placeholder)
     {
