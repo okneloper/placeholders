@@ -6,6 +6,28 @@ For instance, if your data is stored in a database or returned by a remote API, 
 
 #Usage
 
+```php
+$content = '
+<div class="intro-message">
+    <h1>:#:home.h1:#:</h1>
+    <h3>:#:home.h2:#:</h3>
+</div>
+';
+
+$content = $processor->process($content);
+
+echo $content;
+
+/*
+<div class="intro-message">
+    <h1>Welcome to the site!</h1>
+    <h3>Slogan goes here</h3>
+</div>
+*/
+```
+
+See the full example for details of implementation.
+
 ## Example
 
 ```php
