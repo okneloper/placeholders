@@ -31,6 +31,10 @@ class Processor
     {
         $placeholders = $this->parser->extractPlaceholders($content);
 
+        if ($placeholders->count() === 0) {
+            return $content;
+        }
+
         $replacements = $this->translator->translate($placeholders);
 
         $content = str_replace(array_keys($replacements), array_values($replacements), $content);
