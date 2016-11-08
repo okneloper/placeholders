@@ -3,7 +3,7 @@
 namespace Okneloper\Placeholders;
 
 /**
- * Parser Placeholders
+ * Placeholder. Represents placeholder details.
  * @package Okneloper\Parser
  */
 class Placeholder
@@ -21,7 +21,6 @@ class Placeholder
     public $key;
 
     /**
-     *
      * @var array|string
      */
     public $filters;
@@ -34,6 +33,7 @@ class Placeholder
     }
 
     /**
+     * Parses filters string into array of clean filter names.
      * @param $filters
      * @return array
      */
@@ -43,5 +43,15 @@ class Placeholder
         $filters = explode('|', $filters);
         $filters = array_map('trim', $filters);
         return $filters;
+    }
+
+    /**
+     * Returns true if a given filter exists in the placeholder's filters.
+     * @param $name
+     * @return bool
+     */
+    public function hasFilter($name)
+    {
+        return in_array($name, $this->filters);
     }
 }
